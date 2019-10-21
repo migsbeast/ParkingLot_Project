@@ -7,23 +7,48 @@ public class ParkingLot {
     private LinkedList<Vehicle> cars = null;
 
     public ParkingLot(int cap){
-        capacity = cap;
-        occupied = 0;
-        cars = new LinkedList<Vehicle>();
+        this.capacity = cap;
+        this.occupied = 0;
+        this.cars = new LinkedList<Vehicle>();
     }
 
     public void giveSpot(String driver){
         if(this.occupied == this.capacity){
-            System.out.println("Sorry, it looks like there are no available parking spots at this moment");
+            System.out.println("\nSorry, it looks like there are no available parking spots at this moment, please wait!");
+        }
+        else {
+            Vehicle newCar = new Vehicle(driver);
+            cars.add(newCar);
+            this.occupied++;
+            System.out.println("\nA new car is parking!");
+            System.out.println(newCar);
+        }
+    }
+
+    public void freeSpot(Vehicle byeCar){
+        boolean isLeaving = cars.remove(byeCar);
+        if(isLeaving){
+            byeCar.calculatePrice();
+            this.occupied--;
+            System.out.println("\nThe spot with " + byeCar + " has just left.");
         }
         else{
-
+            System.out.println("Sorry, there is no car like that here...");
         }
-        capacity -= 1;
     }
 
-    public void freeSpot(){
-        capacity += 1;
+    //getter for cars
+    public LinkedList<Vehicle> getCars() {
+        return cars;
     }
 
+    //getter for size
+    public int getOccupied() {
+        return occupied;
+    }
+
+    //getter for capacity
+    public int getCapacity() {
+        return capacity;
+    }
 }
