@@ -37,12 +37,12 @@ public class ParkingLot {
         }
     }
 
-    //getter for cars
+    //getter for list of cars
     public LinkedList<Vehicle> getCars() {
         return cars;
     }
 
-    //getter for size
+    //getter for the current amount of cars parked
     public int getOccupied() {
         return occupied;
     }

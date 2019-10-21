@@ -9,9 +9,8 @@ public class Vehicle {
         this.driver = driver;
         this.timestamp = new Timestamp(System.currentTimeMillis());
     }
-
+    // Calculates the amount of time parked
     public double calculatePrice(){
-        // Calculates the amount of time parked
         Timestamp timeout = new Timestamp(System.currentTimeMillis());
         long in = this.timestamp.getTime();
         long out = timeout.getTime();
@@ -40,7 +39,7 @@ public class Vehicle {
             }
         }
     }
-
+    //getter for the driver's name
     public String getDriver() {
         return driver;
     }
