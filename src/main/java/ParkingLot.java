@@ -2,9 +2,9 @@ import java.util.LinkedList;
 
 public class ParkingLot {
 
-    private int capacity = 0;
-    private int occupied = 0;
-    private LinkedList<Vehicle> cars = null;
+    private int capacity;
+    private int occupied;
+    private LinkedList<Vehicle> cars;
 
     public ParkingLot(int cap){
         this.capacity = cap;

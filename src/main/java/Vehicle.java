@@ -15,7 +15,7 @@ public class Vehicle {
         long in = this.timestamp.getTime();
         long out = timeout.getTime();
         long timeParked = (out - in);
-        this.priceToPay = (double) (timeParked * 2.5); // They get charged $2.50 for each millisecond they parked
+        this.priceToPay = timeParked * 2.5; // They get charged $2.50 for each millisecond they parked
         return this.priceToPay;
     }
 
@@ -32,11 +32,7 @@ public class Vehicle {
             return false;
         }else{
             Vehicle other = (Vehicle) obj;
-            if(this.driver.equals(other.driver) && this.timestamp.equals(other.timestamp)){
-                return true;
-            }else{
-                return false;
-            }
+            return this.driver.equals(other.driver) && this.timestamp.equals(other.timestamp);
         }
     }
     //getter for the driver's name
