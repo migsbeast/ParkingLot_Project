@@ -1,3 +1,4 @@
-Vehicle.class
 ParkingLot.class
+LotGroup.class
+Vehicle.class
 TestParking.class
