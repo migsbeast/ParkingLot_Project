@@ -4,6 +4,7 @@ public class LotGroup {
     protected LinkedList<ParkingLot> lotsOwned;
     protected double price;
     protected double discount;
+    protected String rules;
 
     public LotGroup() {
         this.price = 0;
@@ -29,6 +30,10 @@ public class LotGroup {
         this.discount = discount;
     }
 
+    public void setRules(String rules){
+        this.rules = rules;
+    }
+
     public ParkingLot getLot(int index){return this.lotsOwned.get(index);}
 
     public double getPrice(){
@@ -38,4 +43,6 @@ public class LotGroup {
     public double getDiscount(){
         return this.discount;
     }
+
+    public String getRules(){ return this.rules;}
 }

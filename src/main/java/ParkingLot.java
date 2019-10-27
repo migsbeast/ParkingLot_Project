@@ -30,6 +30,20 @@ public class ParkingLot extends LotGroup{
         }
     }
 
+    public void giveSpot(Vehicle car){
+        if(this.occupied == this.capacity){
+            System.out.println("Sorry, it looks like there are no available parking spots at this moment, please wait!");
+        }
+        else {
+            car.setTimestamp();
+            cars.add(car);
+            this.occupied++;
+            car.setLotIParkedAt(this);
+            System.out.println("A new car is parking!");
+            System.out.println(car);
+        }
+    }
+
     public void freeSpot(Vehicle byeCar){
         boolean isLeaving = cars.remove(byeCar);
         if(isLeaving){
